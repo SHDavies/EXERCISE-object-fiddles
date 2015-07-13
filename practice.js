@@ -86,11 +86,20 @@ console.log(backpack);
 //Create another 'me' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
   //Code Here
-
+var me = {
+	name: "Spencer",
+	age: 25,
+	gender: "Male",
+	married: true,
+	eyeColor: "Brown",
+	hairColor: "Brown"
+}
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
   //Code Here
-
+for (var prop in me) {
+	alert(me[prop]);
+}
 
 
 
@@ -102,11 +111,19 @@ console.log(backpack);
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
   //Code Here
-
+var album = {
+	backInBlack: "4:15",
+	stairwayToHeaven: "10:01",
+	letItBe: "3:44",
+	carryOnWaywardSon: "5:24",
+	babaORiley: "5:08"
+}
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
-
+for(song in album) {
+	alert(song);
+}
 
 
 
@@ -118,11 +135,21 @@ console.log(backpack);
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
   //Code Here
-
+var states = {
+	utah: 3000000,
+	newYork: 15000000,
+	texas: 35000000,
+	california: 40000000,
+	alaska: 600000
+}
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
-
+for(state in states) {
+	if (states[state] > 30000) {
+		alert(state);
+	};
+}
 
 
 
@@ -171,11 +198,12 @@ var user = {
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
-
+user.name = "Tyler S. McGinnis";
+user.email = "tyler.mcginnis@devmounta.in";
 //Now call the sayName method that's on the user object which will alert the users email
 
   //Code Here
-
+user.sayName();
 
 
 
@@ -187,17 +215,23 @@ var user = {
 //Create an empty object called methodCollection.
 
   //Code Here
-
+var methodCollection = {};
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
-
+methodCollection.alertHello = function() {
+	alert("hello");
+}
+methodCollection.logHello = function() {
+	console.log("hello");
+}
 //Now call your alertHello and logHello methods.
 
   //Code Here
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 //NEXT PROBLEM
@@ -207,8 +241,13 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakePerson which takes in name, birthday, ssn as its parameters and returns a new object with all of the information that you passed in.
 
   //Code Here
-
-
+var makePerson = function(name, birthday, ssn) {
+	var newObj = {};
+	newObj.name = name;
+	newObj.birthday = birthday;
+	newObj.ssn = ssn;
+	return newObj;
+}
 
 //NEXT PROBLEM
 
@@ -217,7 +256,12 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakeCard which takes in all the data it needs to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
 
   //Code Here
-  
+var makeCard = function(cardNumber, securityCode, expirationDate) {
+	var newCard = {};
+	newCard.cardNumber = cardNumber;
+	newCard.securityCode = securityCode;
+	newCard.expirationDate = expirationDate;
+}
   
   
 //NEXT PROBLEM
@@ -230,5 +274,14 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
-
+var bindCard = function(person, card) {
+	var creditHolder = {};
+	creditHolder.name = person.name;
+	creditHolder.birthday = person.birthday;
+	creditHolder.ssn = person.ssn;
+	creditHolder.cardNumber = card.cardNumber;
+	creditHolder.securityCode = card.securityCode;
+	creditHolder.expirationDate = card.expirationDate;
+	return creditHolder;
+}
 
